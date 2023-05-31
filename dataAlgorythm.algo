@@ -1,0 +1,67 @@
+Problem 1
+Initialize sum as 0.
+Iterate through each element dataSet in num 1:
+If dataSet is not present in num 2, add dataSet to sum.
+Iterate through each element dataSet2 in num 2:
+If dataSet2 is not present in num 1, add dataSet2 to sum.
+Return the value of sum.
+
+function findDistinctSum(num1, num2) {
+  let sum = 0;
+  
+  // Iterate through elements of num 1
+  for (let i = 0; i < num1.length; i++) {
+    let dataSet = num1[i];
+    
+    // Check if element is not present in num 2
+    if (!num2.includes(dataSet)) {
+      sum += dataSet;
+    }
+  }
+  
+  // Iterate through elements of num 2
+  for (let i = 0; i < num2.length; i++) {
+    let dataSet2 = num2[i];
+    
+    // Check if element is not present in num 1
+    if (!num1.includes(dataSet2)) {
+      sum += dataSet2;
+    }
+  }
+  
+  return sum;
+}
+
+
+Problem 2
+//Algorithm: CheckOrthogonality
+ Procedure dot_product(v1, v2):
+     Let ps = 0
+     For i from 0 to length(v1) - 1 do:
+         Set ps = ps + v1[i] * v2[i]
+     End For
+     Return ps
+ End Procedure
+
+ Function is_orthogonal(v1, v2):
+     Let result = dot_product(v1, v2)
+    If result equals 0 then:
+        Return true
+    Else:
+        Return false
+    End If
+ End Function
+
+ Function check_orthogonality(vectors):
+    Let n = length(vectors)
+    Let orthogonality_results = an empty array
+    For i from 0 to n - 1 do:
+        For j from i + 1 to n - 1 do:
+            Let v1 = vectors[i]
+            Let v2 = vectors[j]
+            Let is_orthogonal_result = is_orthogonal(v1, v2)
+            Append is_orthogonal_result to orthogonality_results
+        End For
+    End For
+    Return orthogonality_results
+ End Function
